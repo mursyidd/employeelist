@@ -1,0 +1,54 @@
+﻿@page
+@model test.web.Pages.AddModel
+@{
+	ViewData["Title"] = "Add page";
+}
+
+@* Note: Many of the "class=" instances reference Bootstrap sytles. *@
+
+@* Begin render Add code block *@
+<form method="post">
+	@* 	The EmployeeModels.id is here so the full data model is represented on the page.
+		The database behind the API will assign the id. *@
+	<input hidden asp-for="EmployeeModels.id" />
+	<div class="border p-3 mt-4" style="width:50%">
+		<div class="row pb-2">
+			<h2 class="text-primary pl-3">Add Employee</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="EmployeeModels.username" class="h5"></label><br />
+			@* Empty text box for the Username of the employee to be added. *@
+			<input type="text" asp-for="EmployeeModels.username" />
+			<span asp-validation-for="EmployeeModels.username" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EmployeeModels.mail" class="h5"></label><br />
+			@* Empty text box for the Mail of the employee to be added. *@
+			<input type="text" asp-for="EmployeeModels.mail" />
+			<span asp-validation-for="EmployeeModels.mail" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EmployeeModels.phone_no" class="h5"></label><br />
+			@* Empty text box for the PhoneNo of the employee to be added. *@
+			<input type="text" asp-for="EmployeeModels.phone_no" />
+			<span asp-validation-for="EmployeeModels.phone_no" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EmployeeModels.skill_set" class="h5"></label><br />
+			@* Empty text box for the SkillSet of the employee to be added. *@
+			<input type="text" asp-for="EmployeeModels.skill_set" />
+			<span asp-validation-for="EmployeeModels.skill_set" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EmployeeModels.hobby" class="h5"></label><br />
+			@* Empty text box for the Hobby of the employee to be added. *@
+			<input type="text" asp-for="EmployeeModels.hobby" />
+			<span asp-validation-for="EmployeeModels.hobby" class="text-danger"></span>
+		</div>
+		@* Submit the addition or return to the Index page if the Add is cancelled.*@
+		<button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
+		<a asp-page="Index" class="btn btn-secondary" style="width:150px;">Cancel</a>
+	</div>
+</form>
+@* End render Add code block *@
