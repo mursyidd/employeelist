@@ -6,4 +6,6 @@ public class Employee
     public string? mail { get; set; }
     public string? skill_set { get; set; }
     public string? hobby { get; set; }
+    public int? is_deleted { get; set; }
+    public DateTime? created_date { get; set; }
 }

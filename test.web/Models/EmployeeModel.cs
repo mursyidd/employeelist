@@ -21,6 +21,8 @@ public class EmployeeModel
     public string? skill_set { get; set; }
     [Display(Name = "Hobby")]
     public string? hobby { get; set; }
+    public int? is_deleted { get; set; }
+    public DateTime? created_date { get; set; }
 }
 
 class EmployeeDb : DbContext

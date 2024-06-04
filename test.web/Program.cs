@@ -17,15 +17,6 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddDbContext<EmployeeDb>(options => options.UseInMemoryDatabase("items"));
 builder.Services.AddSqlite<EmployeeDb>(connectionString);
 
-//builder.Services.AddSwaggerGen(c =>
-//{
-//    c.SwaggerDoc("v1", new OpenApiInfo
-//    {
-//        Title = "PizzaStore API",
-//        Description = "Making the Pizzas you love",
-//        Version = "v1"
-//    });
-//});
 
 // Begin HTTP client code
 
@@ -53,10 +44,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    //app.UseSwaggerUI(c =>
-    //{
-    //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
-    //});
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }

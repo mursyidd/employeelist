@@ -24,6 +24,8 @@ namespace test.web.Pages
         // Begin POST operation code
         public async Task<IActionResult> OnPost()
         {
+            EmployeeModels.is_deleted = 0;
+            EmployeeModels.created_date = DateTime.Now;
             // Serialize the information to be added to the database
             var jsonContent = new StringContent(JsonSerializer.Serialize(EmployeeModels),
                 Encoding.UTF8,
